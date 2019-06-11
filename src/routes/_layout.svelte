@@ -1,17 +1,7 @@
 <script>
 	import Nav from '../components/Nav.svelte';
-
 	export let segment;
 </script>
-
-<style>
-	main {
-		position: relative;
-		padding: .1rem 2rem;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-</style>
 
 <Nav {segment}/>
 

@@ -1,33 +1,37 @@
 <script>
   export let title;
-  export let description = "a card";
-  export let tags = ["tag"];
+  export let description;
+  export let tags;
   export let list;
 </script>
 
 <div data-list={list}>
   <header>{title}</header>
-  <p>{description}</p>
+  {#if description}
+    <p>{description}</p>
+  {/if}
+  {#if tags}
   <footer>{tags}</footer>
+  {/if}
 </div>
 
 <style>
   header, p, footer{
-    padding: .1rem;
     margin: 0;
-    width: 100%;
+  }
+  div:hover{
+    color: mediumseagreen;
+    box-shadow: 0 4px 8px rgb(0,0,0,0.12);
+    
   }
   div{
-    flex: 0 1 auto;
-    width: 100%;
-    border: 1px solid #f1f1f1;
+    min-height: 20px;
+    cursor: pointer;
+    border: 1px solid var(--light);
     border-radius: var(--radius, 4px);
-    display: flex;
-    flex-direction: column;
-    align-items: space-around;
-    justify-content: center;
+    align-self: stretch;
     background: white;
-    box-shadow: 0 2px 4px rgb(0,0,0,0.15);
+    box-shadow: var(--shadow);
     margin-bottom: .25rem;
   }
 </style>

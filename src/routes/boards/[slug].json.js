@@ -1,4 +1,6 @@
 import boards from './_boards.js';
+// call firestore instead of importing hard-coded boards
+
 
 const lookup = new Map();
 boards.forEach(board => {
@@ -6,8 +8,6 @@ boards.forEach(board => {
 });
 
 export function get(req, res, next) {
-	// the `slug` parameter is available because
-	// this file is called [slug].json.js
 	const { slug } = req.params;
 
 	if (lookup.has(slug)) {

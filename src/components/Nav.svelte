@@ -3,56 +3,64 @@
 </script>
 
 <style>
+header{
+	display: grid;
+ 	grid-template-columns: auto 1fr auto;
+	width: 100%;
+	background: var(--primary-darker);
+	box-shadow: var(--shadow);
+	padding: 0 1rem;
+
+}
 	nav {
-		border-bottom: 1px solid rgba(255,62,0,0.1);
-		font-weight: 300;
-		padding: 0 1em;
-		background: white;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
 	}
-
-	ul {
-		margin: 0;
-		padding: 0;
-	}
-
-	/* clearfix */
-	ul::after {
-		content: '';
-		display: block;
-		clear: both;
-	}
-
-	li {
-		display: block;
-		float: left;
-	}
-
 	.selected {
-		position: relative;
-		display: inline-block;
+		color: var(--light);
 	}
-
-	.selected::after {
-		position: absolute;
-		content: '';
-		width: calc(100% - 1em);
-		height: 2px;
-		background-color: rgb(255,62,0);
-		display: block;
-		bottom: -1px;
+	div {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
-
 	a {
 		text-decoration: none;
-		padding: 1em 0.5em;
-		display: block;
+		font-weight: bold;
+		color: var(--primary-lighter);
+		padding: 1em;
 	}
+	button{
+		border-radius: 4px;
+		font-weight: bold;
+		color: var(--dark);
+		padding: .5rem 1rem;
+		border: none;
+		background: var(--primary-lighter);
+	}
+	input {
+		display: none;
+	}
+	@media (min-width: 700px) {
+		input {
+			display: block;
+		}
+	}
+	*, *::after, *::before {box-sizing: border-box}
 </style>
 
-<nav>
-	<ul>
-		<li><a class='{segment === undefined ? "selected" : ""}' href='.'>home</a></li>
-		<li><a rel=prefetch class='{segment === "boards" ? "selected" : ""}' href='boards'>boards</a></li>
-		<li><a rel=prefetch class='{segment === "profile" ? "selected" : ""}' href='profile'>profile</a></li>
-	</ul>
-</nav>
+<header>
+	<nav>
+		<a class='{segment === undefined ? "selected" : ""}' href='.'>home</a>
+		<a rel=prefetch class='{segment === "boards" ? "selected" : ""}' href='boards'>boards</a>
+		<a rel=prefetch class='{segment === "settings" ? "selected" : ""}' href='settings'>settings</a>
+	</nav>
+	<div>
+		<input hidden type="search" placeholder="search.." />
+	</div>
+	<div>
+		<button>Login</button>
+		<a rel=prefetch class='{segment === "profile" ? "selected" : ""}' href='profile'>profile</a>
+</div>
+</header>

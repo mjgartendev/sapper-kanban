@@ -1,1 +1,11 @@
-<!doctype html>  <head> <meta charset=utf-8> <meta content="width=device-width,initial-scale=1" name=viewport> <meta content=#333333 name=theme-color> %sapper.base% <link href=global.css rel=stylesheet> <link href=manifest.json rel=manifest> <link href=favicon.png rel=icon type=image/png> %sapper.styles% %sapper.head% </head> <body> <div id=root>%sapper.html%</div> %sapper.scripts% 
+<!doctype html> <html lang=en> <head> <meta charset=utf-8> <meta content="width=device-width,initial-scale=1" name=viewport> <meta content=#333333 name=theme-color> <meta content="About: Demo kanban app using Svelte/Sapper and Firebase, Author: Michael Garten" name=description> %sapper.base% <link href=global.css rel=stylesheet> <link href=manifest.json rel=manifest> <link href=favicon.png rel=icon type=image/png> <script type=application/ld+json> {
+			"@context": "https://schema.org",
+			"@type": "SoftwareApplication",
+			"name": "Sapper Kanban",
+			"applicationCategory": "https://schema.org/WebApplication",
+			"offers": {
+				"@type": "Offer",
+				"price": "0",
+				"priceCurrency": "USD"
+			}
+		} </script> %sapper.styles% %sapper.head% </head> <body> <div id=root>%sapper.html%</div> %sapper.scripts% 

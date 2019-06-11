@@ -16,13 +16,6 @@
 	export let board;
 </script>
 
-<style>
-	Board{
-		height: 100%;
-		width: 100%;
-	}
-</style>
-
 <svelte:head>
 	<title>{board.title}</title>
 </svelte:head>
